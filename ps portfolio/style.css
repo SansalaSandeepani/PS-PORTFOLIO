@@ -1,0 +1,207 @@
+/* FILE: styles.css */
+/* Creative, modern portfolio styling */
+:root {
+  --primary-color: #4ade80;
+  --secondary-color: #60a5fa;
+  --bg-gradient: linear-gradient(135deg, #0f1724, #1e293b);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --text-color: #f0f9ff;
+  --muted-color: #94a3b8;
+  --radius: 16px;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 16px;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+.site-header {
+  text-align: center;
+  padding: 40px 0;
+}
+.site-header h1 {
+  font-size: 36px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.tag {
+  color: var(--muted-color);
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.chapters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.chapter {
+  display: block;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+.chapter span {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted-color);
+  margin-top: 4px;
+}
+.chapter:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+  border-color: var(--primary-color);
+}
+.chapter.extra {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(74,222,128,0.2), rgba(96,165,250,0.2));
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  transition: var(--transition);
+}
+.card:hover {
+  transform: scale(1.01);
+}
+
+h2, h3 { color: var(--primary-color); margin-top: 20px; }
+ul, ol { margin-left: 20px; margin-bottom: 20px; }
+li { margin-bottom: 10px; }
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: var(--primary-color);
+  color: #0f1724;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.btn:hover {
+  background: var(--secondary-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+.center { text-align: center; }
+
+.site-footer { text-align: center; padding: 24px; color: var(--muted-color); font-size: 14px; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .main-grid { grid-template-columns: 1fr; }
+  .chapters { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 600px) {
+  .chapters { grid-template-columns: 1fr; }
+  .chapter { padding: 16px; }
+}
+/* Chapter 01 Styles */
+.chapter-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  color: #f0f9ff;
+  line-height: 1.8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.chapter-container h1 {
+  font-size: 32px;
+  color: #4ade80;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.chapter-container h2 {
+  font-size: 26px;
+  color: #60a5fa;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgba(96, 165, 250, 0.5);
+  padding-bottom: 5px;
+}
+
+.chapter-container ul, .chapter-container ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.chapter-container li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 12px;
+}
+
+.chapter-container li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #4ade80;
+  font-weight: bold;
+}
+
+.chapter-container p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.chapter-container .tip {
+  background: rgba(96, 165, 250, 0.1);
+  padding: 12px 18px;
+  border-left: 5px solid #4ade80;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.chapter-container a.back-home {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4ade80, #60a5fa);
+  color: #0f1724;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.chapter-container a.back-home:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  color: #fff;
+}
